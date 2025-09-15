@@ -1,6 +1,7 @@
 # StartedFromTheData 
 StartedFromTheData explores Drake’s complete Spotify discography using track-level metadata. The dataset includes 662 tracks across 36 features, covering identifiers, album and release details, audio features (danceability, energy, valence, tempo, etc.), track popularity, duration, and Spotify URLs. This foundation enables both descriptive analytics (trends, patterns, visualisations) and predictive modeling (popularity and streaming forecasts).
 
+
 ## Dataset content
 
 
