@@ -1,82 +1,47 @@
-# Drake Spotify Data — Project README
+# StartedFromTheData 
+StartedFromTheData explores Drake’s complete Spotify discography using track-level metadata. The dataset includes 662 tracks across 36 features, covering identifiers, album and release details, audio features (danceability, energy, valence, tempo, etc.), track popularity, duration, and Spotify URLs. This foundation enables both descriptive analytics (trends, patterns, visualisations) and predictive modeling (popularity and streaming forecasts).
 
 ## Dataset content
 
-- Source file: `/mnt/data/drake.data.csv`
 
-- Columns detected:
-
-  - `artist_name` — type: object, missing: 0, unique: 1
-
-  - `artist_id` — type: object, missing: 0, unique: 1
-
-  - `album_id` — type: object, missing: 0, unique: 39
-
-  - `album_type` — type: object, missing: 0, unique: 1
-
-  - `album_release_date` — type: object, missing: 0, unique: 19
-
-  - `album_release_year` — type: int64, missing: 0, unique: 12
-
-  - `album_release_date_precision` — type: object, missing: 0, unique: 2
-
-  - `danceability` — type: float64, missing: 0, unique: 345
-
-  - `energy` — type: float64, missing: 0, unique: 358
-
-  - `key` — type: int64, missing: 0, unique: 12
-
-  - `loudness` — type: float64, missing: 0, unique: 511
-
-  - `mode` — type: int64, missing: 0, unique: 2
-
-  - `speechiness` — type: float64, missing: 0, unique: 386
-
-  - `acousticness` — type: float64, missing: 0, unique: 446
-
-  - `instrumentalness` — type: float64, missing: 0, unique: 245
-
-  - `liveness` — type: float64, missing: 0, unique: 278
-
-  - `valence` — type: float64, missing: 0, unique: 385
-
-  - `tempo` — type: float64, missing: 0, unique: 539
-
-  - `track_id` — type: object, missing: 0, unique: 662
-
-  - `analysis_url` — type: object, missing: 0, unique: 662
-
-  - `time_signature` — type: int64, missing: 0, unique: 4
-
-  - `disc_number` — type: int64, missing: 0, unique: 2
-
-  - `duration_ms` — type: int64, missing: 0, unique: 355
-
-  - `explicit` — type: bool, missing: 0, unique: 2
-
-  - `track_href` — type: object, missing: 0, unique: 662
-
-  - `is_local` — type: bool, missing: 0, unique: 1
-
-  - `track_name` — type: object, missing: 0, unique: 247
-
-  - `track_preview_url` — type: float64, missing: 662, unique: 1
-
-  - `track_number` — type: int64, missing: 0, unique: 22
-
-  - `type` — type: object, missing: 0, unique: 1
-
-  - `track_uri` — type: object, missing: 0, unique: 662
-
-  - `external_urls.spotify` — type: object, missing: 0, unique: 662
-
-  - `album_name` — type: object, missing: 0, unique: 18
-
-  - `key_name` — type: object, missing: 0, unique: 12
-
-  - `mode_name` — type: object, missing: 0, unique: 2
-
-  - `key_mode` — type: object, missing: 0, unique: 24
+| Column                  | Type     | Missing | Unique |
+|--------------------------|----------|---------|--------|
+| artist_name              | object   | 0       | 1      |
+| artist_id                | object   | 0       | 1      |
+| album_id                 | object   | 0       | 39     |
+| album_type               | object   | 0       | 1      |
+| album_release_date       | object   | 0       | 19     |
+| album_release_year       | int64    | 0       | 12     |
+| album_release_date_precision | object | 0      | 2      |
+| danceability             | float64  | 0       | 345    |
+| energy                   | float64  | 0       | 358    |
+| key                      | int64    | 0       | 12     |
+| loudness                 | float64  | 0       | 511    |
+| mode                     | int64    | 0       | 2      |
+| speechiness              | float64  | 0       | 386    |
+| acousticness             | float64  | 0       | 446    |
+| instrumentalness         | float64  | 0       | 245    |
+| liveness                 | float64  | 0       | 278    |
+| valence                  | float64  | 0       | 385    |
+| tempo                    | float64  | 0       | 539    |
+| track_id                 | object   | 0       | 662    |
+| analysis_url             | object   | 0       | 662    |
+| time_signature           | int64    | 0       | 4      |
+| disc_number              | int64    | 0       | 2      |
+| duration_ms              | int64    | 0       | 355    |
+| explicit                 | bool     | 0       | 2      |
+| track_href               | object   | 0       | 662    |
+| is_local                 | bool     | 0       | 1      |
+| track_name               | object   | 0       | 247    |
+| track_preview_url        | float64  | 662     | 1      |
+| track_number             | int64    | 0       | 22     |
+| type                     | object   | 0       | 1      |
+| track_uri                | object   | 0       | 662    |
+| external_urls.spotify    | object   | 0       | 662    |
+| album_name               | object   | 0       | 18     |
+| key_name                 | object   | 0       | 12     |
+| mode_name                | object   | 0       | 2      |
+| key_mode                 | object   | 0       | 24     |
 
 
 ## Business requirements
@@ -139,7 +104,7 @@
 
 - A sidebar for filters (year, album, explicit, popularity range).
 - Main area: KPI tiles, interactive plots, top-N tables.
-- Deploy with `streamlit run streamlit_app.py` or containerize with Docker.
+- Deploy with `streamlit run streamlit_app.py` 
 
 
 ## Challenges & solutions
@@ -154,20 +119,40 @@
 - Add user authentication and personalized views.
 
 
-## Technologies used
+### Technologies Used
 
-- Python, Pandas, NumPy, scikit-learn, Prophet/ARIMA, Matplotlib/Altair/Plotly, Streamlit.
+| Technology      | Purpose                                                                 |
+|-----------------|-------------------------------------------------------------------------|
+| Python          | Core programming language for data analysis, modeling, and dashboards.  |
+| Pandas          | Data manipulation and cleaning (DataFrames, filtering, aggregation).    |
+| NumPy           | Numerical computing and efficient array operations.                     |
+| scikit-learn    | Machine learning algorithms, preprocessing, and evaluation.             |
+| Prophet / ARIMA | Time-series forecasting and trend analysis.                             |
+| Matplotlib      | Foundational plotting library for static visualizations.                |
+| Altair          | Declarative statistical visualizations.                                 |
+| Plotly          | Interactive charts and dashboards (used in Streamlit).                  |
+| Streamlit       | Web app framework for interactive data dashboards.                      |
 
+---
 
-## Main data analysis libraries
+### Main Data Analysis Libraries
 
-- pandas, numpy, matplotlib, seaborn, plotly, scikit-learn, statsmodels, prophet
+| Library        | Purpose                                                                 |
+|----------------|-------------------------------------------------------------------------|
+| pandas         | Data wrangling, cleaning, and tabular data analysis.                    |
+| numpy          | Mathematical operations, linear algebra, and array handling.            |
+| matplotlib     | Base plotting library for static charts and customization.              |
+| seaborn        | Statistical visualization built on top of matplotlib.                   |
+| plotly         | Interactive and dynamic charts for EDA and dashboards.                  |
+| scikit-learn   | ML models, preprocessing, feature engineering, and validation.          |
+| statsmodels    | Advanced statistical modeling (regression, ARIMA, hypothesis testing).  |
+| prophet        | High-level library for time-series forecasting and trend modeling.      |
 
 
 ## Credits
 
-- Data provider: (your dataset)
-- Project author: (your name)
+- Data provider: [Kaggle](https://www.kaggle.com/datasets/arthurboari/drake-spotify-data?resource=download)
+- Project author: Tamika Mqhum 
 
 
 ## Conclusion & Acknowledgements
