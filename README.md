@@ -1,72 +1,175 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Drake Spotify Data — Project README
 
-## Template Instructions
+## Dataset content
 
-Welcome,
+- Source file: `/mnt/data/drake.data.csv`
 
-This is the Code Institute student template for the Data Analytics capstone project. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+- Columns detected:
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+  - `artist_name` — type: object, missing: 0, unique: 1
 
-## How to use this repo
+  - `artist_id` — type: object, missing: 0, unique: 1
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+  - `album_id` — type: object, missing: 0, unique: 39
 
-1. Copy the URL of your repository to your clipboard.
+  - `album_type` — type: object, missing: 0, unique: 1
 
-1. In VS Code, select **File** -> **Open Folder**.
+  - `album_release_date` — type: object, missing: 0, unique: 19
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
+  - `album_release_year` — type: int64, missing: 0, unique: 12
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open the terminal.
+  - `album_release_date_precision` — type: object, missing: 0, unique: 2
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+  - `danceability` — type: float64, missing: 0, unique: 345
 
-1. In VS Code, select **File** > **Open Folder** again.
+  - `energy` — type: float64, missing: 0, unique: 358
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
+  - `key` — type: int64, missing: 0, unique: 12
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate from each other. You need to create your virtual environment, also called a venv, and then ensure that it is activated any time you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
+  - `loudness` — type: float64, missing: 0, unique: 511
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
+  - `mode` — type: int64, missing: 0, unique: 2
 
-1. Choose **Venv** from the dropdown list.
+  - `speechiness` — type: float64, missing: 0, unique: 386
 
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
+  - `acousticness` — type: float64, missing: 0, unique: 446
 
-1. **DO NOT** click the box next to `requirements.txt`, as you need to do more steps before you can install your dependencies. Click **OK**.
+  - `instrumentalness` — type: float64, missing: 0, unique: 245
 
-1. You will see a `.venv` folder appear in the file explorer pane to show that the virtual environment has been created.
+  - `liveness` — type: float64, missing: 0, unique: 278
 
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
+  - `valence` — type: float64, missing: 0, unique: 385
 
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
+  - `tempo` — type: float64, missing: 0, unique: 539
 
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
+  - `track_id` — type: object, missing: 0, unique: 662
 
- ```console
- pip3 install -r requirements.txt
- ```
+  - `analysis_url` — type: object, missing: 0, unique: 662
 
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
+  - `time_signature` — type: int64, missing: 0, unique: 4
 
-1. Click the **kernel** button and choose **Python Environments**.
+  - `disc_number` — type: int64, missing: 0, unique: 2
 
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
+  - `duration_ms` — type: int64, missing: 0, unique: 355
 
-```console
-! python --version
-```
+  - `explicit` — type: bool, missing: 0, unique: 2
 
-## Deployment Reminders
+  - `track_href` — type: object, missing: 0, unique: 662
 
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version that closest matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
+  - `is_local` — type: bool, missing: 0, unique: 1
 
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
+  - `track_name` — type: object, missing: 0, unique: 247
+
+  - `track_preview_url` — type: float64, missing: 662, unique: 1
+
+  - `track_number` — type: int64, missing: 0, unique: 22
+
+  - `type` — type: object, missing: 0, unique: 1
+
+  - `track_uri` — type: object, missing: 0, unique: 662
+
+  - `external_urls.spotify` — type: object, missing: 0, unique: 662
+
+  - `album_name` — type: object, missing: 0, unique: 18
+
+  - `key_name` — type: object, missing: 0, unique: 12
+
+  - `mode_name` — type: object, missing: 0, unique: 2
+
+  - `key_mode` — type: object, missing: 0, unique: 24
+
+
+## Business requirements
+
+- Provide insights about Drake's tracks and streaming behavior.
+- Build a dashboard for stakeholders to explore track-level metrics and trends.
+- Enable simple predictive modeling for future stream counts or popularity.
+
+
+## Hypotheses and validation
+
+1. Tracks with higher audio 'danceability' and 'energy' have higher streams — validate using correlation and scatter plots.
+
+2. Release timing affects streams (e.g., recency) — validate with time-series analysis.
+
+3. Explicit tracks may have different streaming patterns — compare distributions.
+
+
+## Project plan & roadmap
+
+1. Data ingestion & cleaning (this repo)
+2. EDA and feature engineering
+3. Model prototyping (time-series/regression)
+4. Dashboard development (Streamlit)
+5. Deployment and monitoring
+
+
+## Data visualization mapping
+
+- Overview KPIs: total streams, average popularity, track count.
+- Trends: streams over time, moving averages.
+- Distribution: popularity, duration, acoustic features.
+- Comparisons: top tracks, album-wise breakdown.
+
+
+## Analysis techniques used
+
+- Descriptive statistics
+- Correlation analysis
+- Visual EDA (histograms, boxplots, scatter)
+- Time-series smoothing and forecasting (ARIMA/Prophet)
+- Regression / tree-based models for prediction
+
+
+## Limitations and alternative approaches
+
+- Dataset may be incomplete or biased toward certain releases.
+- External factors (marketing, playlisting) not captured.
+- Alternatives: enrich with Spotify API metadata, social metrics, playlist placements.
+
+
+## Ethical considerations
+
+- Avoid overinterpreting correlations as causation.
+- Respect artist intellectual property and privacy.
+- Be transparent about model limitations and biases.
+
+
+## Dashboard design & deployment (Streamlit)
+
+- A sidebar for filters (year, album, explicit, popularity range).
+- Main area: KPI tiles, interactive plots, top-N tables.
+- Deploy with `streamlit run streamlit_app.py` or containerize with Docker.
+
+
+## Challenges & solutions
+
+- Missing values: impute or drop depending on importance.
+- Large file sizes: sample or use chunked processing.
+
+
+## Future improvements
+
+- Integrate Spotify API for live updates.
+- Add user authentication and personalized views.
+
+
+## Technologies used
+
+- Python, Pandas, NumPy, scikit-learn, Prophet/ARIMA, Matplotlib/Altair/Plotly, Streamlit.
+
+
+## Main data analysis libraries
+
+- pandas, numpy, matplotlib, seaborn, plotly, scikit-learn, statsmodels, prophet
+
+
+## Credits
+
+- Data provider: (your dataset)
+- Project author: (your name)
+
+
+## Conclusion & Acknowledgements
+
+- This README pairs with the Jupyter notebook that contains hands-on analysis and code.
